@@ -20,12 +20,16 @@ if [ -d $repertoire ]; then
                 cd ~
                 cd $repertoire
                 ls -al               
+		echo "Et ci-dessous vous trouverez les fichiers de $repertoire modifiés il y a moins d'une semaine :"
+                find . -type f -mtime -7
 
         elif [ "$ouinon" = "non" ] || [ "$ouinon" = "Non" ]; then
                 echo "Très bien $USER, voici le contenu de $repertoire :"
                 cd ~
                 cd $repertoire
                 ls -l
+		echo "Et ci-dessous vous trouverez les fichiers de $repertoire modifiés il y a moins d'une semaine :"
+                find . -type f -mtime -7
         
         else
         	echo "Vous avez dû commettre une faute de frappe, un peu d'attention $USER ! Réessayez en écrivant oui ou non."
